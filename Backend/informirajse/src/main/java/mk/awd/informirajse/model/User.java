@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +23,10 @@ public class User {
     private String gender;
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Blog> blogs;
+    @OneToMany(mappedBy = "commentOwner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
     public User() {}
 

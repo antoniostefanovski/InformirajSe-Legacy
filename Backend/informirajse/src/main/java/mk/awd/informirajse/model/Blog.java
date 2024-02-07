@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,6 +19,8 @@ public class Blog {
     private LocalDate dateCreated;
     @ManyToOne
     private User user;
+    @OneToMany(mappedBy = "blog", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
     public Blog() {}
 }
