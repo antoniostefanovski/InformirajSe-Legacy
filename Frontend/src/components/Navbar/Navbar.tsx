@@ -26,7 +26,7 @@ function Navbar() {
             <div className="navbar-container-links">
               <div className='navbar-container-links-list'>
                 <NavLink to="/" className={'navbar-container-links-list-item'}>Дома</NavLink>
-                <NavLink to="/" className={'navbar-container-links-list-item'}>Блогови</NavLink>
+                <NavLink to="/allblogs" className={'navbar-container-links-list-item'}>Блогови</NavLink>
                 <NavLink to="/" className={'navbar-container-links-list-item'}>За нас</NavLink>
               </div>
             </div>
