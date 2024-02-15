@@ -26,7 +26,7 @@ function Navbar() {
             <div className="navbar-container-links">
               <div className='navbar-container-links-list'>
                 <NavLink to="/" className={'navbar-container-links-list-item'}>Дома</NavLink>
-                <NavLink to="/" className={'navbar-container-links-list-item'}>Блогови</NavLink>
+                <NavLink to="/allblogs" className={'navbar-container-links-list-item'}>Блогови</NavLink>
                 <NavLink to="/" className={'navbar-container-links-list-item'}>За нас</NavLink>
               </div>
             </div>
@@ -35,8 +35,8 @@ function Navbar() {
             </div>
             <div className="navbar-container-links2">
               <div className="navbar-container-links2-list">
-                <NavLink to="/" className={'navbar-container-links2-list-item'}>Најава</NavLink>
-                <NavLink to="/" className={'navbar-container-links2-list-item'}>Регистрација</NavLink>
+                <NavLink to="/login" className={'navbar-container-links2-list-item'}>Најава</NavLink>
+                <NavLink to="/register" className={'navbar-container-links2-list-item'}>Регистрација</NavLink>
                 <p className={'navbar-container-links2-list-item'} onClick={isSearchIconClicked}><img src={search_icon} alt='search-icon'/></p>
               </div>
             </div>
