@@ -9,9 +9,9 @@ export default function Register() {
                 <img src={logo} className="register-form-logo"></img>
                     <form className="register-form">
                         <div className="register-form-left">
-                            <label className="register-name-label">Име*</label><br></br>
+                            <label className="register-name-label">Корисничко Име*</label><br></br>
                             <input type="text" className="register-name-input"></input><br></br>
-                            <label className="register-surname-label">Презиме*</label><br></br>
+                            <label className="register-surname-label">Име и Презиме*</label><br></br>
                             <input type="text" className="register-surname-input"></input><br></br>
                             <label className="register-date-label">Датум на раѓање*</label><br></br>
                             <input type="date" className="register-date-input"></input><br></br>
