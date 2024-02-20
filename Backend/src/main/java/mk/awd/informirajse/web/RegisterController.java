@@ -2,6 +2,7 @@ package mk.awd.informirajse.web;
 
 import mk.awd.informirajse.model.DTO.RegisterDTO;
 import mk.awd.informirajse.service.impl.UserServiceImpl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +16,7 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public void register(@RequestBody RegisterDTO userInfo) {
+    public ResponseEntity<Void> register(@RequestBody RegisterDTO userInfo) {
         service.register(userInfo.getUsername(),
                 userInfo.getPassword(),
                 userInfo.getRepeatedPassword(),
@@ -25,5 +26,7 @@ public class RegisterController {
                 userInfo.getDateOfBirth(),
                 userInfo.getGender()
                 );
+
+        return ResponseEntity.ok().build();
     }
 }
