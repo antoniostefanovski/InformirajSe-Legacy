@@ -7,6 +7,8 @@ import mk.awd.informirajse.repository.UserRepository;
 import mk.awd.informirajse.service.AuthenticationService;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
 
@@ -18,8 +20,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public User login(String username, String password) {
-        if(username == null && password == null) {
+        if(username == null || password == null) {
             throw new InvalidArgumentsException();
+        }
+
+        Optional<User> userExists = userRepository.findByUsername(username);
+
+        if(userExists.isEmpty()) {
+            return null;
         }
 
         return userRepository.findByUsernameAndPassword(username, password).orElseThrow(() -> new UserNotFoundException(username));

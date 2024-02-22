@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Navbar/Navbar.scss';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo_2.png';
@@ -6,11 +6,17 @@ import search_icon from '../../assets/search_icon.png';
 import menu_icon from '../../assets/menu_icon2.png';
 import closed_menu from '../../assets/closed_menu.png';
 import { Fade } from "react-awesome-reveal";
+import { LoginService } from '../../services/LoginService';
+import { LogoutService } from '../../services/LogoutService';
 
 function Navbar() {
 
+  const loginService = new LoginService();
+  const logoutService = new LogoutService();
+
   const [menuIcon, setMenuIcon] = useState(false);
   const [searchIcon, setSearchIcon] = useState(false);
+  const [isAuth, setAuth] = useState(false);
 
   const isMenuClicked = () => {
     setMenuIcon(!Boolean(menuIcon));
@@ -19,6 +25,20 @@ function Navbar() {
   const isSearchIconClicked = () => {
     setSearchIcon(!Boolean(searchIcon));
   }
+
+  const isUserAuth = async () => {
+      const result = await loginService.isAuthenticated();
+
+      setAuth(result);
+  }
+
+  const userLogout = async () => {
+    await logoutService.logout();
+  }
+
+  useEffect(() => {
+      isUserAuth();
+  },[]);
 
   return (
     <div>
@@ -35,8 +55,16 @@ function Navbar() {
             </div>
             <div className="navbar-container-links2">
               <div className="navbar-container-links2-list">
-                <NavLink to="/login" className={'navbar-container-links2-list-item'}>Најава</NavLink>
-                <NavLink to="/register" className={'navbar-container-links2-list-item'}>Регистрација</NavLink>
+                { !isAuth && <>
+                    <NavLink to="/login" className={'navbar-container-links2-list-item'}>Најава</NavLink>
+                    <NavLink to="/register" className={'navbar-container-links2-list-item'}>Регистрација</NavLink>
+                  </> 
+                }
+                { isAuth && <>
+                    <NavLink to="/" className={'navbar-container-links2-list-item'}>Профил</NavLink>
+                    <div className={'navbar-container-links2-list-item'} onClick={userLogout}>Одјава</div>
+                  </>
+                }
                 <p className={'navbar-container-links2-list-item'} onClick={isSearchIconClicked}><img src={search_icon} alt='search-icon'/></p>
               </div>
             </div>
@@ -49,8 +77,16 @@ function Navbar() {
             <NavLink to="/" className={'responsive-main-links-list-item'}>Дома</NavLink>
             <NavLink to="/" className={'responsive-main-links-list-item'}>Блогови</NavLink>
             <NavLink to="/" className={'responsive-main-links-list-item'}>За нас</NavLink>
-            <NavLink to="/" className={'responsive-main-links-list-item'}>Најава</NavLink>
-            <NavLink to="/" className={'responsive-main-links-list-item'}>Регистрација</NavLink>
+            { !isAuth && <>
+                <NavLink to="/" className={'responsive-main-links-list-item'}>Најава</NavLink>
+                <NavLink to="/" className={'responsive-main-links-list-item'}>Регистрација</NavLink>
+              </> 
+            }
+            { isAuth && <>
+                <NavLink to="/" className={'responsive-main-links-list-item'}>Профил</NavLink>
+                <div className={'responsive-main-links-list-item'} onClick={userLogout}>Одјава</div>
+              </>
+            }
             <NavLink to="/" className={'responsive-main-links-list-item'}><img src={search_icon} alt='search-icon' onClick={isSearchIconClicked}/></NavLink>
           </div>
         </div> }

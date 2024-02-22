@@ -8,23 +8,17 @@ import mk.awd.informirajse.model.exceptions.UserNotFoundException;
 import mk.awd.informirajse.model.exceptions.UsernameAlreadyExistsException;
 import mk.awd.informirajse.repository.UserRepository;
 import mk.awd.informirajse.service.UserService;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Collections;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -42,19 +36,24 @@ public class UserServiceImpl implements UserService {
             throw new UsernameAlreadyExistsException(username);
         }
 
-        User user = new User(username, name, surname, email, passwordEncoder.encode(password), dateOfBirth, gender, UserRole.ROLE_USER);
+        User user = new User(username, name, surname, email, password, dateOfBirth, gender, UserRole.ROLE_USER);
 
         return this.userRepository.save(user);
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = this.userRepository.findByUsername(username).orElseThrow(() -> new UserNotFoundException(username));
+    public User login(String username, String password) {
+        User user = this.userRepository.findByUsername(username).orElse(null);
 
-        return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
-                user.getPassword(),
-                Collections.singleton(user.getUserRole())
-        );
+        if(user != null && user.getPassword().equals(password)) {
+            return user;
+        }
+
+        return null;
+    }
+
+    @Override
+    public User findById(Long userId) {
+        return this.userRepository.findById(userId).orElse(null);
     }
 }
