@@ -4,11 +4,8 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import mk.awd.informirajse.config.UserProfile;
-import mk.awd.informirajse.model.User;
 import mk.awd.informirajse.service.SessionService;
 import mk.awd.informirajse.service.UserService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.time.LocalDateTime;

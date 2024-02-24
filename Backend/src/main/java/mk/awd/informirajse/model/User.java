@@ -14,13 +14,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
+    @Column(nullable = false)
     private String username;
-    private String name;
-    private String surname;
+    @Column(nullable = false)
+    private String fullname;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
     private LocalDate dateOfBirth;
+    @Column(nullable = false)
     private String gender;
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -30,10 +36,9 @@ public class User {
 
     public User() {}
 
-    public User(String username, String name, String surname, String email, String password, LocalDate dateOfBirth, String gender, UserRole userRole) {
+    public User(String username, String fullname, String email, String password, LocalDate dateOfBirth, String gender, UserRole userRole) {
         this.username = username;
-        this.name = name;
-        this.surname = surname;
+        this.fullname = fullname;
         this.email = email;
         this.password = password;
         this.dateOfBirth = dateOfBirth;

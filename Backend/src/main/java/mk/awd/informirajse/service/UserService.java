@@ -6,8 +6,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 public interface UserService {
-    User register(String username, String password, String repeatedPassword, String email, String name, String surname, LocalDate dateOfBirth, String gender);
+    User register(String username, String password, String repeatedPassword, String email, String fullname, LocalDate dateOfBirth, String gender);
     User login(String username, String password);
-
     User findById(Long userId);
+    User findByUsername(String username);
+    User findByEmail(String email);
 }

@@ -1,5 +1,5 @@
 import { BlogInfo } from "./BlogInfo";
-import { UserRole } from "./UserRole";
+import { UserRole } from "../enums/UserRole";
 
 export class User {
     public id: string | undefined;

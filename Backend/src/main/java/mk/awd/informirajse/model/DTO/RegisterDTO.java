@@ -7,8 +7,7 @@ import java.time.LocalDate;
 @Data
 public class RegisterDTO {
     String username;
-    String name;
-    String surname;
+    String fullname;
     String email;
     String password;
     String repeatedPassword;
