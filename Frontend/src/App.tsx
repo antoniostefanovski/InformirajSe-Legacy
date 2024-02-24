@@ -11,6 +11,7 @@ import Register from './views/RegisterForm/Register';
 import Blogs from './views/Blogs/Blogs';
 import MostInterestingBlogs from './views/MostInterestingBlogs/MostInteresting';
 import News from './views/News/News';
+import RegistrationSuccess from './views/RegistrationSuccess/RegistrationSuccess';
 {/*  
 *
 *  THE NAVBAR AND FOOTER WERE COMMENTED DURING THE PHASE OF MAKING THE LOGIN AND REGISTER FORMS.
@@ -19,7 +20,7 @@ import News from './views/News/News';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/profile" element={ <ProfilePreview/> }/>
@@ -30,8 +31,9 @@ function App() {
         <Route path="/allblogs" element={ <Blogs/> }/>
         <Route path="/most-interesting" element={ <MostInterestingBlogs/> }/>
         <Route path="/news" element={ <News/> }/>
+        <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

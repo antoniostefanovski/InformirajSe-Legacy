@@ -37,7 +37,7 @@ const validateEmail = (value: string) => {
     }
 
     if(!value.match(emailPattern)) {
-        return "Неправилна e-mail адреса";
+        return "Неправилна e-mail адреса.";
     }
 
     return "";
