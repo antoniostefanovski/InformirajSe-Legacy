@@ -15,7 +15,7 @@ function RegistrationSuccess() {
                     Вашата корисничка сметка е креирана, сега сте дел од <span className="registration-success-body-container-content-paragraph-accent">ИнформирајСе</span> !
                 </p>
                 <p className="registration-success-body-container-content-paragraph">
-                    Топло ве советуваме да разгледате и да откриете што се крие нашата платформа. Од тука може да продолжете со вашата авантура.
+                    Топло ве советуваме да разгледате и да откриете што сè крие нашата платформа. Од тука може да продолжете со вашата авантура.
                 </p>
                 <p className="registration-success-body-container-content-paragraph">
                     Прочитајте што се е актуелно и ново во овој хаотичен ИТ свет, прочитајте што мислат другите за оваа тема и оставете коментар на нивниот блог.

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './views/Home/Home';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
@@ -12,20 +12,23 @@ import Blogs from './views/Blogs/Blogs';
 import MostInterestingBlogs from './views/MostInterestingBlogs/MostInteresting';
 import News from './views/News/News';
 import RegistrationSuccess from './views/RegistrationSuccess/RegistrationSuccess';
+import Login from './views/Login/Login';
 {/*  
 *
 *  THE NAVBAR AND FOOTER WERE COMMENTED DURING THE PHASE OF MAKING THE LOGIN AND REGISTER FORMS.
 *
 */}
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
-      {/* <Navbar/> */}
+      { (location.pathname === "/login" || location.pathname === "/register") ? "" : <Navbar/>}
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/profile" element={ <ProfilePreview/> }/>
         <Route path="/notAuthorized" element={ <NotAuthorized/> }/>
-        <Route path="/login" element={ <LoginForm/> }/>
+        <Route path="/login-page-old" element={ <LoginForm/> }/>
+        <Route path="/login" element={ <Login/> }/>
         <Route path="/register" element={ <Register/> }/>
         <Route path="/allblogs" element={ <Blogs/> }/>
         <Route path="/allblogs" element={ <Blogs/> }/>
@@ -33,7 +36,7 @@ function App() {
         <Route path="/news" element={ <News/> }/>
         <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
       </Routes>
-      {/* <Footer/> */}
+      { (location.pathname === "/login" || location.pathname === "/register") ? "" : <Footer/>}
     </div>
   );
 }
