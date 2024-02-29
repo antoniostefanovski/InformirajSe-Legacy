@@ -14,6 +14,7 @@ import News from './views/News/News';
 import RegistrationSuccess from './views/RegistrationSuccess/RegistrationSuccess';
 import Login from './views/Login/Login';
 import RegisterPage from './views/RegisterPage/RegisterPage';
+import NewBlog from './views/NewBlog/NewBlogForm';
 {/*  
 *
 *  THE NAVBAR AND FOOTER WERE COMMENTED DURING THE PHASE OF MAKING THE LOGIN AND REGISTER FORMS.
@@ -23,7 +24,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-      { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration") ? "" : <Navbar/>}
+      { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration" || location.pathname === "/notAuthorized") ? "" : <Navbar/>}
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/profile" element={ <ProfilePreview/> }/>
@@ -37,8 +38,9 @@ function App() {
         <Route path="/most-interesting" element={ <MostInterestingBlogs/> }/>
         <Route path="/news" element={ <News/> }/>
         <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
+        <Route path="/newBlog" element={ <NewBlog/> }/>
       </Routes>
-      { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration") ? "" : <Footer/>}
+      { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration" || location.pathname === "/notAuthorized") ? "" : <Footer/>}
     </div>
   );
 }
