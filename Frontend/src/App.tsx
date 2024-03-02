@@ -15,11 +15,8 @@ import RegistrationSuccess from './views/RegistrationSuccess/RegistrationSuccess
 import Login from './views/Login/Login';
 import RegisterPage from './views/RegisterPage/RegisterPage';
 import NewBlog from './views/NewBlog/NewBlogForm';
-{/*  
-*
-*  THE NAVBAR AND FOOTER WERE COMMENTED DURING THE PHASE OF MAKING THE LOGIN AND REGISTER FORMS.
-*
-*/}
+import BlogPreview from './views/BlogPreview/BlogPreview';
+
 function App() {
   const location = useLocation();
   return (
@@ -39,6 +36,7 @@ function App() {
         <Route path="/news" element={ <News/> }/>
         <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
         <Route path="/newBlog" element={ <NewBlog/> }/>
+        <Route path="/blog" element={<BlogPreview/>} />
       </Routes>
       { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration" || location.pathname === "/notAuthorized") ? "" : <Footer/>}
     </div>
