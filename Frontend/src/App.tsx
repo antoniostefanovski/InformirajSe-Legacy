@@ -32,7 +32,7 @@ function App() {
         <Route path="/register" element={ <RegisterPage/> }/>
         <Route path="/allblogs" element={ <Blogs/> }/>
         <Route path="/allblogs" element={ <Blogs/> }/>
-        <Route path="/most-interesting" element={ <MostInterestingBlogs/> }/>
+        <Route path="/most-interesting-blogs" element={ <MostInterestingBlogs/> }/>
         <Route path="/news" element={ <News/> }/>
         <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
         <Route path="/newBlog" element={ <NewBlog/> }/>

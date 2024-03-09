@@ -3,9 +3,18 @@ import './Blogs.scss';
 import { IoMdSearch } from "react-icons/io";
 import BlogCart from "../BlogCart/BlogCart";
 import slika from '../../assets/blog-img.jpg';
+import { useState } from 'react';
 
 
 export default function Blogs(){
+
+    {/**
+    *
+    *
+    * TREBA DA SE NAPRAVI NAPISHE KOD KOJ KE GI ISPRAKJA PODATOCITE NA BACKEND NA KLASATA BlogSearchClass
+    * 
+    */}
+
     return(
         <div className="blogs-main-content">
             <p className="blogs-first-text">Тука можете да ги пронејдете сите блогови напишани од страна на нашите корисници.
@@ -17,8 +26,8 @@ export default function Blogs(){
                 </div>
                 <select className="blogs-datelist">
                     <option>Датум...</option>
-                    <option>Растечки</option>
-                    <option>Опаѓачки</option>
+                    <option value="rastecki">Растечки</option>
+                    <option value="opagacki">Опаѓачки</option>
                 </select>
             </form>
 
