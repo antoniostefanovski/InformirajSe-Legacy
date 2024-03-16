@@ -1,7 +1,10 @@
 package mk.awd.informirajse.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 
@@ -15,9 +18,18 @@ public class Comment {
     private String commentDescription;
     private LocalDate dateComment;
     @ManyToOne
+    @JsonBackReference
+    //@OnDelete(action = OnDeleteAction.CASCADE)
     private Blog blog;
     @ManyToOne
     private User commentOwner;
 
     public Comment() {}
+
+    public Comment(String commentDescription, Blog blog, User user){
+        this.commentDescription = commentDescription;
+        this.blog = blog;
+        this.commentOwner = user;
+        this.dateComment = LocalDate.now();
+    }
 }

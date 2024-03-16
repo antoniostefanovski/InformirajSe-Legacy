@@ -35,5 +35,14 @@ public class InterceptorsConfig implements WebMvcConfigurer {
                 .excludePathPatterns(authUrls);
     }
 
-    List<String> authUrls = List.of("/api/login");
+    List<String> authUrls = List.of("/api/login",
+            "/api/register",
+            "/api/blogs",
+            "/api/blog/{id}",
+            "/api/delete-blog/{id}",
+            "/api/new-blog",
+            "/api/new-comment",
+            "/api/delete-comment/{id}",
+            "/api/edit-blog/{id}"
+    );
 }

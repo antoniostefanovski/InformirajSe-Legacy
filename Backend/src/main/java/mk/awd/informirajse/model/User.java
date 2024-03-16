@@ -1,7 +1,10 @@
 package mk.awd.informirajse.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,9 +26,12 @@ public class User {
     private String gender;
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Blog> blogs;
-    @OneToMany(mappedBy = "commentOwner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "commentOwner", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+    @JsonManagedReference
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Comment> comments;
 
     public User() {}
