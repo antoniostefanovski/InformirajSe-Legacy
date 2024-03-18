@@ -19,9 +19,16 @@ public class Comment {
     private LocalDate dateComment;
     @ManyToOne
     @JsonBackReference
-    //@OnDelete(action = OnDeleteAction.CASCADE)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Blog blog;
     @ManyToOne
+    /**
+     *   slednata linija e dodadena posle testiranje na brishenjeto komentar,
+     *   zatoa shto togash zabelezhav deke e propust. ako ima nekoj problem so brishenjeto
+     *   komentari najverojatno ova e problemot.
+     */
+    @OnDelete(action = OnDeleteAction.CASCADE)
+
     private User commentOwner;
 
     public Comment() {}
