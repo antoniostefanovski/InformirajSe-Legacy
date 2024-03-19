@@ -28,7 +28,6 @@ public class Comment {
      *   komentari najverojatno ova e problemot.
      */
     @OnDelete(action = OnDeleteAction.CASCADE)
-
     private User commentOwner;
 
     public Comment() {}
@@ -40,3 +39,4 @@ public class Comment {
         this.dateComment = LocalDate.now();
     }
 }
+
