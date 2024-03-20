@@ -30,8 +30,8 @@ public class Blog {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
     @OneToMany(mappedBy = "blog", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
-    @JsonManagedReference
     private List<Comment> comments;
+
 
     public Blog() {}
 
@@ -41,6 +41,7 @@ public class Blog {
         this.contentBody = contentBody;
         this.dateCreated = LocalDate.now();
         this.user = user;
-        this.comments = new ArrayList<>();
     }
+
+
 }

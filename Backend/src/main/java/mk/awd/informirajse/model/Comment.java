@@ -18,15 +18,11 @@ public class Comment {
     private String commentDescription;
     private LocalDate dateComment;
     @ManyToOne
-    @JsonBackReference
+    @JoinColumn(name = "blog_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Blog blog;
     @ManyToOne
-    /**
-     *   slednata linija e dodadena posle testiranje na brishenjeto komentar,
-     *   zatoa shto togash zabelezhav deke e propust. ako ima nekoj problem so brishenjeto
-     *   komentari najverojatno ova e problemot.
-     */
+    @JoinColumn(name = "comment_owner_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User commentOwner;
 

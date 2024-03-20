@@ -44,6 +44,8 @@ public class InterceptorsConfig implements WebMvcConfigurer {
             "/api/new-blog",
             "/api/new-comment",
             "/api/delete-comment/{id}",
-            "/api/edit-blog/{id}"
+            "/api/edit-blog/{id}",
+            "/api/most-interesting"
+
     );
 }

@@ -3,6 +3,7 @@ package mk.awd.informirajse.web;
 import mk.awd.informirajse.config.UserProfile;
 import mk.awd.informirajse.model.Blog;
 import mk.awd.informirajse.model.DTO.BlogDTO;
+import mk.awd.informirajse.model.DTO.SearchDTO;
 import mk.awd.informirajse.service.BlogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +22,14 @@ public class BlogController {
     }
 
     @GetMapping("/blogs")
-    public ResponseEntity<List<Blog>> findAll(){
-        if(this.service.findAll() == null){
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<List<Blog>> findAll(@RequestBody(required = false) SearchDTO searchTerm){
+        List<Blog> blogs = null;
+        if(searchTerm.keyword == null && searchTerm.order == null){
+            blogs = this.service.findAll();
         }else{
-            return ResponseEntity.ok(this.service.findAll());
+            blogs = this.service.filter(searchTerm.keyword, searchTerm.order);
         }
+        return ResponseEntity.ok(blogs);
     }
 
     @GetMapping("/blog/{id}")
@@ -38,6 +41,15 @@ public class BlogController {
         }else{
             return ResponseEntity.ok(this.service.findById(id));
         }
+    }
+
+    @GetMapping("/most-interesting")
+    public ResponseEntity<List<Blog>> mostInterestingBlogs(){
+        List<Blog> blogs = this.service.findBlogsWithMostComments();
+        if(blogs == null)
+            return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(blogs);
     }
 
     @GetMapping("/delete-blog/{id}")

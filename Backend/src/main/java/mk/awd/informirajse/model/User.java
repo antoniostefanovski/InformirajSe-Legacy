@@ -7,6 +7,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,12 +28,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Blog> blogs;
     @OneToMany(mappedBy = "commentOwner", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
-    @JsonManagedReference
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Comment> comments;
+
 
     public User() {}
 
@@ -45,5 +44,6 @@ public class User {
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.userRole = userRole;
+
     }
 }

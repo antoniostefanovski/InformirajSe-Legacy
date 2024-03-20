@@ -47,7 +47,7 @@ function Navbar() {
               <div className='navbar-container-links-list'>
                 <NavLink to="/" className={'navbar-container-links-list-item'}>Дома</NavLink>
                 <NavLink to="/allblogs" className={'navbar-container-links-list-item'}>Блогови</NavLink>
-                <NavLink to="/" className={'navbar-container-links-list-item'}>За нас</NavLink>
+                <NavLink to="/aboutus" className={'navbar-container-links-list-item'}>За нас</NavLink>
               </div>
             </div>
             <div className="navbar-container-logo">
@@ -61,7 +61,7 @@ function Navbar() {
                   </> 
                 }
                 { isAuth && <>
-                    <NavLink to="/" className={'navbar-container-links2-list-item'}>Профил</NavLink>
+                    <NavLink to="/profilepreview" className={'navbar-container-links2-list-item'}>Профил</NavLink>
                     <div className={'navbar-container-links2-list-item'} onClick={userLogout}>Одјава</div>
                   </>
                 }
@@ -75,15 +75,15 @@ function Navbar() {
         { menuIcon && <div className="responsive-main">
           <div className='responsive-main-links-list'>
             <NavLink to="/" className={'responsive-main-links-list-item'}>Дома</NavLink>
-            <NavLink to="/" className={'responsive-main-links-list-item'}>Блогови</NavLink>
-            <NavLink to="/" className={'responsive-main-links-list-item'}>За нас</NavLink>
+            <NavLink to="/allblogs" className={'responsive-main-links-list-item'}>Блогови</NavLink>
+            <NavLink to="/aboutus" className={'responsive-main-links-list-item'}>За нас</NavLink>
             { !isAuth && <>
-                <NavLink to="/" className={'responsive-main-links-list-item'}>Најава</NavLink>
-                <NavLink to="/" className={'responsive-main-links-list-item'}>Регистрација</NavLink>
+                <NavLink to="/login" className={'responsive-main-links-list-item'}>Најава</NavLink>
+                <NavLink to="/register" className={'responsive-main-links-list-item'}>Регистрација</NavLink>
               </> 
             }
             { isAuth && <>
-                <NavLink to="/" className={'responsive-main-links-list-item'}>Профил</NavLink>
+                <NavLink to="/profilepreview" className={'responsive-main-links-list-item'}>Профил</NavLink>
                 <div className={'responsive-main-links-list-item'} onClick={userLogout}>Одјава</div>
               </>
             }
