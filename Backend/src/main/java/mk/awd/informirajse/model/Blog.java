@@ -25,13 +25,15 @@ public class Blog {
     @Column(length = 3000)
     private String contentBody;
     private LocalDate dateCreated;
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "user-id")
     @JsonBackReference
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
-    @OneToMany(mappedBy = "blog", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+    @OneToMany(mappedBy = "blog", fetch = FetchType.EAGER/* cascade = CascadeType.ALL*/)
     @JsonManagedReference
     private List<Comment> comments;
+
 
     public Blog() {}
 
@@ -41,6 +43,7 @@ public class Blog {
         this.contentBody = contentBody;
         this.dateCreated = LocalDate.now();
         this.user = user;
-        this.comments = new ArrayList<>();
     }
+
+
 }

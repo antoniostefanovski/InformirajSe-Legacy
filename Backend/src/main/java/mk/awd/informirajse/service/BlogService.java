@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface BlogService {
     public List<Blog> findAll();
+    public List<Blog> filter(String keyword, String order);
     public Blog findById(Long id);
     public List<Blog> findBlogsWithMostComments();
     public Blog addNewBlog(String  title, String summary, String bodyContent, Long userId);

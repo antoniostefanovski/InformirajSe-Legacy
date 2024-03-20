@@ -6,7 +6,7 @@ interface BlogCart {
     slika: string;
     avtor: string;
     datum: string;
-  }
+}
 
 const BlogCart: React.FC<BlogCart> = (props) =>{
     return(

@@ -20,6 +20,11 @@ $primary-color: #6633FF;
     margin-bottom: 40px;
 }
 
+@mixin invalid-username {
+    font-size: 1rem;
+    color: red;
+}
+
 .register-form-main-content{
     height: 100%;
     width: 100%;
@@ -65,6 +70,7 @@ $primary-color: #6633FF;
             padding: 10px;
             display: block;
             
+            @include invalid-username();
 
             .register-name-label{
                 @include register-form-label-style();
@@ -101,6 +107,8 @@ $primary-color: #6633FF;
             margin-top: 8px;
             // @include test-border();
 
+            @include invalid-username();
+
             .register-email-label{
                 @include register-form-label-style();
             }
@@ -134,6 +142,7 @@ $primary-color: #6633FF;
                 height: 50px;
                 border-radius: 10px;
                 border:none;
+                cursor: pointer;
             }
 
             .register-submit-btn:active{
