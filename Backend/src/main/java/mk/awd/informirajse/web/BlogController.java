@@ -24,6 +24,10 @@ public class BlogController {
     @GetMapping("/blogs")
     public ResponseEntity<List<Blog>> findAll(@RequestBody(required = false) SearchDTO searchTerm){
         List<Blog> blogs = null;
+
+        if(searchTerm == null){
+            blogs = this.service.findAll();
+        }
         if(searchTerm.keyword == null && searchTerm.order == null){
             blogs = this.service.findAll();
         }else{
@@ -75,7 +79,7 @@ public class BlogController {
         if(data == null){
             return ResponseEntity.notFound().build();
         }
-        this.service.editBlog(id, data.title, data.summary, data.bodyContent/*, data.userId*/);
+        this.service.editBlog(id, data.title, data.summary, data.bodyContent);
         return ResponseEntity.ok().build();
     }
 }

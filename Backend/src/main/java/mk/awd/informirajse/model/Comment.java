@@ -20,10 +20,12 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "blog_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
     private Blog blog;
     @ManyToOne
     @JoinColumn(name = "comment_owner_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonBackReference
     private User commentOwner;
 
     public Comment() {}

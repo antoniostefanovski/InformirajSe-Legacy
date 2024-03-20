@@ -28,8 +28,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+    @JsonManagedReference
     private List<Blog> blogs;
     @OneToMany(mappedBy = "commentOwner", fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+    @JsonManagedReference
     private List<Comment> comments;
 
 

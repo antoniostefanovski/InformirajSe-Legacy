@@ -74,9 +74,11 @@ public class BlogServiceImpl implements BlogService {
                 .limit(3)
                 .toList();
 
-        return sortedBlogs.stream()
+        List<Blog> list = sortedBlogs.stream()
                 .sorted(Comparator.comparing(Blog::getDateCreated))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()).stream().toList();
+
+        return list;
     }
 
     @Override
