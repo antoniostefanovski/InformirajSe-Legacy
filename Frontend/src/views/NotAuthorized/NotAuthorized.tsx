@@ -1,5 +1,6 @@
 import React from "react";
 import "./NotAuthorized.scss";
+import rocket from '../../assets/Rocket Launch.gif';
 
 export default function NotAuthorized() {
    
@@ -11,10 +12,7 @@ export default function NotAuthorized() {
                 <button className="back-button">Назад</button>
             </div>
             <div className="right-side">
-                <div className="blob2"></div>
-                <div className="blob"></div>
-                <div className="blob1"></div>
-                
+                <img src={rocket} className="not-auth-gif"/>
             </div>
         </div>
             

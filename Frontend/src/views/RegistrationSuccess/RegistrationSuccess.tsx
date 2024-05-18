@@ -21,7 +21,7 @@ function RegistrationSuccess() {
                     Прочитајте што се е актуелно и ново во овој хаотичен ИТ свет, прочитајте што мислат другите за оваа тема и оставете коментар на нивниот блог.
                 </p>
                 <p className="registration-success-body-container-content-paragraph">
-                    Вашето мислење нам ни е битно, па би сакале да го слушниме. Направете го тоа со пишување на блог на некоја тема која вам ви е интересна. 
+                    Вашето мислење нам ни е битно, па би сакале да го слушнeме. Направете го тоа со пишување на блог на некоја тема која вам ви е интересна. 
                 </p>
                 <p className="registration-success-body-container-content-paragraph">
                     Доколку имате некакво прашање, контактирајте го тимот на ИнформирајСе преку <span className="registration-success-body-container-content-paragraph-accent">support@informirajse.mk</span>.

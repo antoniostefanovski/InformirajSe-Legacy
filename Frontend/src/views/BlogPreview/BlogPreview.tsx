@@ -14,8 +14,8 @@ export default function BlogPreview(){
                     <p className="blog-prev-date">Креиран на: 01.03.2024</p>
                 </div>
             </div>  
-
-            <div className="b-p-butons-div">
+            <div className="main-content-and-buttons">
+                <div className="b-p-butons-div">
                 <button type="submit" className="b-p-edit">Измени</button>
                 <button type="submit" className="b-p-delete">Избриши</button>
             </div>
@@ -46,6 +46,8 @@ Lessons for software application developers here (could perhaps) include the fac
 Let’s stay connected and dial in.
 
             </p>
+            </div>
+            
 
             <Comment />
             <Comment />

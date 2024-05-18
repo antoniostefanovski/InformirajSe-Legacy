@@ -9,131 +9,161 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
 
 
 .main-content{
-    // @include test-border;
-    width: 90%;
-    height: 547px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
 
     .left-side{
-        // @include test-border;
+      // @include test-border();
+      margin-left: 5%;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 20px;
+      text-align: start;
 
-        .text{
-            font-size: 80px;
-            text-align: left;
-            color: $primarycolor;
-            margin-top: 15%;
-        }
-
-        .back-button{
-            margin-top: 5%;
-            margin-left: -84%;
-            width: 15%;
-            height: 8%;
-            background-color: $primarycolor;
-            color: #fff;
-            font-weight: bolder;
-            font-size:16px;
-            border:none;
-            border-radius: 6px;
-        }
-        .back-button:active {
-            background-color: #66f;
-            // #0056b3
-          }
-          
+      .back-button{
+        margin-top: 20px;
+        width: 75px;
+        height: 38px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
     }
-    
-    .right-side{
-        // @include test-border;
 
-        .blob {
-            width: 400px;
-            height: 400px;
-            background-color: #6633FF;
-            position: absolute;
-            top: 50%;
-            left: 70%;
-            transform: translate(-50%, -50%);
-            animation: blobAnimation 5s ease-in-out infinite alternate;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-          }
-          
-          @keyframes blobAnimation {
-            0%, 100% {
-              clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            }
-            25% {
-              clip-path: polygon(45% 0%, 100% 30%, 70% 100%, 0% 60%);
-            }
-            50% {
-              clip-path: polygon(30% 0%, 100% 10%, 80% 100%, 0% 40%);
-            }
-            75% {
-              clip-path: polygon(20% 0%, 100% 0%, 90% 100%, 0% 10%);
-            }
-          }
-          
-          .blob1 {
-            width: 250px;
-            height: 250px;
-            background-color: #0056b3;
-            position: absolute;
-            top: 45%;
-            left: 65%;
-            transform: translate(-50%, -50%);
-            animation: blobAnimation1 5s ease-in-out infinite alternate;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-          }
-          
-          @keyframes blobAnimation1 {
-            0%, 100% {
-              clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            }
-            25% {
-              clip-path: polygon(40% 0%, 100% 30%, 70% 100%, 0% 60%);
-            }
-            50% {
-              clip-path: polygon(30% 0%, 100% 10%, 80% 100%, 0% 40%);
-            }
-            75% {
-              clip-path: polygon(20% 0%, 100% 0%, 90% 100%, 0% 10%);
-            }
-          }
-          
-          .blob2 {
-            width: 300px;
-            height: 300px;
-            background-color: #66ccff;
-            position: absolute;
-            top: 57%;
-            left: 77%;
-            transform: translate(-50%, -50%);
-            animation: blobAnimation2 5s ease-in-out infinite alternate;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-          }
-          
-          @keyframes blobAnimation2 {
-            0%, 100% {
-              clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            }
-            25% {
-              clip-path: polygon(45% 0%, 100% 30%, 70% 100%, 0% 60%);
-            }
-            50% {
-              clip-path: polygon(30% 0%, 100% 10%, 80% 100%, 0% 40%);
-            }
-            75% {
-              clip-path: polygon(20% 0%, 100% 0%, 90% 100%, 0% 10%);
-            }
-          }
-          
+    .right-side{
+      height: 450px;
+      margin-top: 150px;
+      margin-left: -350px;
     }
 }
 
 
+@media only screen and (max-width:1300px){
+  .main-content{
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+
+    .left-side{
+      @include test-border();
+      margin-left: 5%;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 20px;
+      text-align: start;
+
+      .back-button{
+        margin-top: 20px;
+        width: 75px;
+        height: 38px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
+    }
+
+    .right-side{
+      @include test-border();
+      height: 400px;
+      width:600px;
+      margin-top: 150px;
+      margin-left: -350px;
+    }
+}
+}
+@media only screen and (max-width:1100px){
+  .main-content{
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+
+    .left-side{
+      @include test-border();
+      margin-left: 5%;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 20px;
+      text-align: start;
+
+      .back-button{
+        margin-top: 20px;
+        width: 75px;
+        height: 38px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
+    }
+
+    .right-side{
+      @include test-border();
+      height: 400px;
+      width:500px;
+      margin-top: 150px;
+      margin-left: -350px;
+    }
+}
+}
+
+@media only screen and (max-width:980px){
+  .main-content{
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+
+    .left-side{
+      @include test-border();
+      margin-left: 5%;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 18px;
+      text-align: start;
+
+      .back-button{
+        margin-top: 20px;
+        width: 65px;
+        height: 33px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
+    }
+
+    .right-side{
+      @include test-border();
+      height: 150px;
+      width:150px;
+      margin-top: 150px;
+      margin-left: -350px;
+    }
+
+    
+}
+}

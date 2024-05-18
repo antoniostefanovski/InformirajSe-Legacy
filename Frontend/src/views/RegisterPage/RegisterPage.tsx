@@ -118,7 +118,7 @@ function RegisterPage() {
                                 <option value={"Female"}>Female</option>
                         </select>
                         { validationErrors.gender && <p className="register-page-body-container-form-right-error">{validationErrors.gender}</p> }
-                        <button className="login-page-body-container-login-form-button" onClick={registerAccount}>Sign Up</button>
+                        <button className="login-page-body-container-login-form-button sign_btn" onClick={registerAccount}>Sign Up</button>
                         { error.length > 0 && <p className="register-page-body-container-form-right-error">{error}</p>}
                     </div>
                 </div>

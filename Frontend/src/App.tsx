@@ -16,6 +16,7 @@ import Login from './views/Login/Login';
 import RegisterPage from './views/RegisterPage/RegisterPage';
 import NewBlog from './views/NewBlog/NewBlogForm';
 import BlogPreview from './views/BlogPreview/BlogPreview';
+import EditBlog from './views/EditBlog/EditBlog';
 
 function App() {
   const location = useLocation();
@@ -25,18 +26,18 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/profile" element={ <ProfilePreview/> }/>
-        <Route path="/notAuthorized" element={ <NotAuthorized/> }/>
+        <Route path="/not-authorized" element={ <NotAuthorized/> }/>
         <Route path="/login-page-old" element={ <LoginForm/> }/>
         <Route path="/login" element={ <Login/> }/>
         <Route path="/register-page-old" element={ <Register/> }/>
         <Route path="/register" element={ <RegisterPage/> }/>
-        <Route path="/allblogs" element={ <Blogs/> }/>
-        <Route path="/allblogs" element={ <Blogs/> }/>
+        <Route path="/all-blogs" element={ <Blogs/> }/>
         <Route path="/most-interesting-blogs" element={ <MostInterestingBlogs/> }/>
         <Route path="/news" element={ <News/> }/>
         <Route path="/successful-registration" element={ <RegistrationSuccess/> }/>
-        <Route path="/newBlog" element={ <NewBlog/> }/>
+        <Route path="/new-blog" element={ <NewBlog/> }/>
         <Route path="/blog" element={<BlogPreview/>} />
+        <Route path="/edit-blog" element={<EditBlog/>} />
       </Routes>
       { (location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/successful-registration" || location.pathname === "/notAuthorized") ? "" : <Footer/>}
     </div>
