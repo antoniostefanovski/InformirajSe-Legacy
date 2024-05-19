@@ -26,6 +26,7 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
 
       .back-button{
         margin-top: 20px;
+        margin-left: 100px;
         width: 75px;
         height: 38px;
         border:none;
@@ -40,12 +41,16 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
     .right-side{
       height: 450px;
       margin-top: 150px;
-      margin-left: -350px;
+      
+
+      // .not-auth-gif{
+      //   width: 800px;
+      //   height: 600px;
+      // }
     }
 }
 
-
-@media only screen and (max-width:1300px){
+@media only screen and (max-width:1150px){
   .main-content{
     background-color: rgb(253, 253, 253);
     display:flex;
@@ -55,7 +60,7 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
     // margin-bottom: 100px;
 
     .left-side{
-      @include test-border();
+      // @include test-border();
       margin-left: 5%;
       margin-top: auto;
       margin-bottom: auto;
@@ -64,6 +69,7 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
 
       .back-button{
         margin-top: 20px;
+        margin-left: 100px;
         width: 75px;
         height: 38px;
         border:none;
@@ -76,55 +82,20 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
     }
 
     .right-side{
-      @include test-border();
-      height: 400px;
-      width:600px;
-      margin-top: 150px;
-      margin-left: -350px;
+      height: 450px;
+      margin-top: 200px;
+      
+
+      .not-auth-gif{
+        // @include test-border();
+        width: 600px;
+        height: 400px;
+      }
     }
 }
 }
+
 @media only screen and (max-width:1100px){
-  .main-content{
-    background-color: rgb(253, 253, 253);
-    display:flex;
-    justify-content: space-between;
-    height: 750px;
-    // margin-top: 100px;
-    // margin-bottom: 100px;
-
-    .left-side{
-      @include test-border();
-      margin-left: 5%;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 20px;
-      text-align: start;
-
-      .back-button{
-        margin-top: 20px;
-        width: 75px;
-        height: 38px;
-        border:none;
-        background-color: $primaryRgba;
-        border-radius: 10px;
-        color:white;
-        font-weight: bolder;
-        font-size: 16px;
-      }
-    }
-
-    .right-side{
-      @include test-border();
-      height: 400px;
-      width:500px;
-      margin-top: 150px;
-      margin-left: -350px;
-    }
-}
-}
-
-@media only screen and (max-width:980px){
   .main-content{
     background-color: rgb(253, 253, 253);
     display:flex;
@@ -136,17 +107,20 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
     // margin-bottom: 100px;
 
     .left-side{
-      @include test-border();
+      // @include test-border();
       margin-left: 5%;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 18px;
+      margin-top: 150px;
+      font-size: 20px;
       text-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
 
       .back-button{
         margin-top: 20px;
-        width: 65px;
-        height: 33px;
+        margin-left: -0%;
+        width: 75px;
+        height: 38px;
         border:none;
         background-color: $primaryRgba;
         border-radius: 10px;
@@ -157,13 +131,114 @@ $primaryRgba: rgb(102, 51, 255, 0.9);
     }
 
     .right-side{
-      @include test-border();
-      height: 150px;
-      width:150px;
+      height: 450px;
+      margin-top: 50px;
+      
+
+      .not-auth-gif{
+        // @include test-border();
+        width: 600px;
+        height: 400px;
+      }
+    }
+}
+}
+
+@media only screen and (max-width:600px){
+  .main-content{
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+
+    .left-side{
+      // @include test-border();
+      margin-left: 5%;
       margin-top: 150px;
-      margin-left: -350px;
+      font-size: 20px;
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .back-button{
+        margin-top: 20px;
+        margin-left: -0%;
+        width: 75px;
+        height: 38px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
     }
 
-    
+    .right-side{
+      height: 450px;
+      margin-top: 50px;
+      
+
+      .not-auth-gif{
+        // @include test-border();
+        width: 500px;
+        height: 350px;
+      }
+    }
+}
+}
+
+
+@media only screen and (max-width:500px){
+  .main-content{
+    background-color: rgb(253, 253, 253);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 750px;
+    // margin-top: 100px;
+    // margin-bottom: 100px;
+
+    .left-side{
+      // @include test-border();
+      margin-left: 5%;
+      margin-top: 100px;
+      font-size: 14px;
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .back-button{
+        margin-top: 20px;
+        margin-left: -0%;
+        width: 75px;
+        height: 38px;
+        border:none;
+        background-color: $primaryRgba;
+        border-radius: 10px;
+        color:white;
+        font-weight: bolder;
+        font-size: 16px;
+      }
+    }
+
+    .right-side{
+      height: 450px;
+      margin-top: 50px;
+      
+
+      .not-auth-gif{
+        // @include test-border();
+        width: 300px;
+        height: 270px;
+      }
+    }
 }
 }
